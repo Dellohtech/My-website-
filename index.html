@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+
+    
+    <title>United Pay</title>
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+    <style>
+      /* Reset some default styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* General Layout */
+      body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+      }
+
+      /* Header Styling */
+      header {
+        background: linear-gradient(to right, #109cd3, #a6b12e);  
+        height: 200px;
+        background-blend-mode: color-dodge;
+        padding:30px ;
+        color: rgb(0, 0, 0);
+        filter: brightness(100%);
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 10px;
+      }
+
+      .logo-img img {
+        max-width: 100px;
+       margin-left: 90px;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      nav ul li {
+        margin-left: 30px;
+        
+      }
+
+
+      nav a {
+  color: rgb(243, 232, 232); /* Initial text color */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease, font-weight 0.3s ease; /* Smooth transition for color and font-weight */
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #ff5733; /* New color on hover */
+  font-weight: 700; /* Optional: Change font weight on hover */
+}
+
+
+      /* Hero Section */
+      .hero {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 40px 00px;
+        background: linear-gradient(to right, #d36810, #00C6FF);  
+        color: rgb(0, 0, 0);
+      }
+
+      .hero-content {
+        flex: 1px;
+        max-width: 50%;
+        margin-left: 50px;
+       
+      }
+
+      .hero-title {
+        font-size: 2.5rem;
+        margin: 20px 5px;
+        margin-bottom: 20px;
+      }
+ 
+      .btns a {
+  background-color: #cb158e; /* Initial background color */
+  padding: 5px 30px;
+  
+  color: white; /* Initial text color */
+  border-radius: 9px;
+  text-decoration: none;
+  margin-right: 15px;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.btns a:hover {
+  background-color: #c50c0c; /* New background color on hover */
+  color: #000000; /* New text color on hover */
+}
+
+.btns{
+  justify-content: space-between;
+  margin: 0px;
+}
+
+
+      .figure img {
+        max-width: 50%;
+        height: fit-content;
+        margin-left: 100px;
+        margin-top: 50px;
+      }
+
+      /* About Section */
+      .about {
+        padding: 60px 0;
+        background: linear-gradient(to right, #d32410, #9e0fae);  
+      }
+
+      .about-banner img {
+        width: 100%;
+        max-width: 700px;
+        margin-bottom: 30px;
+      }
+
+      .about-content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .stats-list {
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+      }
+
+      .stats-card {
+        text-align: center;
+      }
+
+      /* Services Section */
+      .service {
+        background-color: #fafafa;
+        padding: 60px 0;
+        background-color: #4f40b1;
+
+      }
+
+      .service-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+      }
+
+      .service-card {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      /* Features Section */
+      .features {
+        padding: 60px 0;
+        background: linear-gradient(to right, #6a8715, #00C6FF);  
+      }
+
+      .features-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+
+      .features-card {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .icon {
+        font-size: 2rem;
+        color: #ff6f61;
+      }
+
+      /* Mobile Responsiveness */
+      @media screen and (max-width: 768px) {
+        .hero {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+
+        .hero-content {
+          max-width: 100%;
+          margin-bottom: 30px;
+          
+        }
+
+        .stats-list {
+          flex-direction: column;
+        }
+
+        .service-list {
+          grid-template-columns: 1fr;
+        }
+
+        .features-list {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        nav ul {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .navbar-item {
+          margin: 10px 0;
+        }
+
+        .hero-title {
+          font-size: 2rem;
+        }
+      }
+
+      .united2{
+        display: flex;
+        padding: 20px;
+        margin-bottom: 500px;
+      }
+
+
+      /* General styling for the buttons */
+.hero-content .btns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px; /* Space between buttons */
+  margin-top: 30px;
+}
+
+.hero-content .btns .btn {
+  background-color: #e72784; /* Button color */
+  color: white;
+  padding: 15px 25px;
+  border-radius: 9px;
+  text-decoration: none;
+  font-size: 16px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.hero-content .btns .btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 768px) {
+  .hero-content .btns {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-content .btns .btn {
+    width: 80%; /* Make buttons take up 80% of the screen width */
+    margin-bottom: 15px;
+  }
+}
+
+/* Responsive styles for very small screens */
+@media (max-width: 480px) {
+  .hero-content .btns .btn {
+    width: 100%; /* Make buttons take up 100% of the screen width */
+  }
+}
+
+
+
+/* Styling for the footer */
+footer.footer {
+  background-color: #e1d3d3; /* Dark background */
+  color: rgb(173, 42, 42);
+  padding: 30px 20px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 0; /* Removed margin from footer */
+}
+
+.footer-content {
+  max-width: 120000px;
+  margin: 0 auto;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  
+  gap: 50px; /* Space between icons */
+  margin-bottom: 0px;
+}
+
+.social-link {
+  display: inline-block;
+}
+
+.social-icon {
+  width: 30px; /* Size of the social media icons */
+  height: 40px;
+  
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+}
+
+/* Footer text styling */
+.footer-text {
+  font-size: 14px;
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 768px) {
+  .social-links {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px; /* Slightly smaller gap between icons */
+  }
+
+  .social-icon {
+    width: 35px; /* Adjusted icon size for smaller screens */
+    height: 35px;
+  }
+
+  .footer-text {
+    font-size: 12px; /* Smaller text for small screens */
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .footer {
+    padding: 20px 10px;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .social-icon {
+    width: 30px; /* Even smaller icons for very small screens */
+    height: 30px;
+  }
+
+  .footer-text {
+    font-size: 10px;
+  }
+}
+
+
+
+/* Add the hamburger menu styles */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  background-color: #fff;
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin: 6px 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: #109cd3;
+    position: absolute;
+    top: 70px;
+    right: 10px;
+    width: 200px;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 15px 0;
+  }
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 10px 20px; /* Adjust padding to make it look like a button */
+  background-color: #362caa; /* Initial background color for the button */
+  color: white; /* White text color */
+  border-radius: 25px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Bold text */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+nav a:hover {
+  background-color: #0cc5a9; /* Hover background color */
+  color: #000000; /* Change text color on hover */
+}
+
+nav a:active {
+  background-color: #003c90; /* Darker background when button is clicked */
+}
+
+
+
+
+    </style>
+  </head>
+  <body id="top">
+    <header class="header">
+      <div class="container">
+        <div class="logo-img">
+          <h1> United pay bank</h1>
+          <img src="bul.png"logo">
+          <i class="fa-solid fa-building-columns"></i>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#features">How To Start</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <!-- Add hamburger menu in the header -->
+<div class="menu-toggle">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p>We Are An Online Payment Platform</p>
+        <h2 class="hero-title">We offer Payment Services for users around the world.</h2>
+        <div class="United2">
+          <p style="margin: 30px 9px;">United Pay is a trusted online payment platform that enables you to get paid easily.</p>
+        </div>
+        <div class="btns">
+          <a href="Or124t3oQ5r78/" class="btn">Link Account</a>
+          <a href="track.html" class="btn">Track Payments</a>
+          <a href="cancel .html" class="btn">Cancel Payment</a>
+        </div>
+      </div>
+
+    
+      
+      
+      <div class="figure">
+        <img src="crypt.png" alt="hero-banner">
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+    
+
+        <div class="about-content">
+          <h2>Why Our Agency</h2>
+          <p>At United Pay, we are revolutionizing the way people handle their finances, offering a seamless, secure, and innovative online payment platform. Whether you're an individual, a business, or a global enterprise, we provide flexible solutions to make payments easy, quick, and reliable.
+
+            Our Mission
+            Our mission is simple: to empower individuals and businesses with the most efficient, secure, and user-friendly payment solutions. 
+            We strive to break down barriers in the financial world by offering a global platform that
+             supports a wide range of payment methods, including traditional currencies and emerging digital assets.</p>
+          
+             <b style="font-size: 24px;">
+              Why Choose United Pay?
+             </b>
+            
+             <p>
+              <b style="font-size: 17px;">Global Reach:</b> With United Pay, you can send and receive payments from anywhere in the world. Whether you are dealing in fiat currencies or cryptocurrencies,
+               our platform ensures fast, reliable transactions with minimal fees.
+             </p>
+        
+             <p>
+              <b style="font-size: 17px;">Security First:</b> We prioritize the security of your transactions. Using advanced encryption technologies and multi-layered 
+              security protocols, we ensure that your financial data and transactions are always protected.
+             </p>
+
+             <p>
+              <b style="font-size: 17px;">Multiple Payment Options:</b> From credit cards to digital wallets, and cryptocurrencies like Bitcoin and Ethereum, we support a diverse range of payment methods to suit your needs.
+               You can link multiple payment methods to your account, making the payment process as seamless as possible.
+             </p>
+
+
+            
+
+             <div class="stats-list">
+            <div class="stats-card">
+              <p>1076+</p>
+              <p>Satisfied Clients</p>
+            </div>
+            <div class="stats-card">
+              <p>1718+</p>
+              <p>Transactions</p>
+            </div>
+            <div class="stats-card">
+              <p>1000+</p>
+              <p>Clients</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="service" id="services">
+      <div class="container">
+        <h2>Our Specialization</h2>
+        <div class="service-list">
+          <div class="service-card">
+            <div class="card-icon">
+              <ion-icon name="wallet-outline"></ion-icon>
+            </div>
+            <h3>Crypto-Payments</h3>
+            <p>Embrace the future of finance with crypto payment services. We support Bitcoin, Ethereum, Litecoin, and more.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="card-icon">
+              <ion-icon name="globe-outline"></ion-icon>
+            </div>
+            <h3>World-wide Currencies Support</h3>
+            <p>Transact in multiple currencies with ease. No more currency barriers—just seamless global transactions.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="card-icon">
+              <ion-icon name="link-outline"></ion-icon>
+            </div>
+            <h3>Third Party Payment Support</h3>
+            <p>Integrate with payment gateways like PayPal, Stripe, and Apple Pay. We offer secure, real-time processing.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="container">
+        <h1 style="text-decoration: underline; margin-bottom: 20px;">How to Get Started with United pay</h1>
+
+        <h4>
+          <h3>
+          1.Link Account:
+        </h3>
+
+           Link your account by providing your basic details (email, password, business name, etc.).
+           This will be your personal dashboard where you manage your payments, transactions, and settings.
+        </h4>
+
+           <h3>
+        2. Verify Your Identity
+           </h3>
+
+        To ensure security and comply with financial regulations, we’ll ask you to verify your identity. 
+        You may need to upload some documents, like your ID or business license, to complete this process.
+        <h4>
+
+        </h4>
+
+          <h4>
+            <h3>
+           3. Connect Your Bank Account
+             </h3>
+
+              Link your bank account or payment method to start receiving payments. 
+              Our platform supports multiple payment options, ensuring you can accept funds directly into your account without hassle.
+          </h4>
+
+          <h4>
+            <h3>
+           4. Choose Your Payment Plan
+          </h3>
+
+           Pick a payment plan that suits your business needs.
+            Whether you're a freelancer, a startup, or a large enterprise, we offer flexible plans with competitive rates.
+          </h4>
+
+          <h4>
+            <h3>
+            5. Set Up Your Payment Methods
+          </h3>
+
+            Customize the payment options you’d like to offer your customers.
+            We support credit/debit cards, e-wallets, and alternative payment methods to give your clients flexibility.
+          </h4>
+
+          <h4>
+            <h3>
+            6. Integrate Payment System
+          </h3>
+
+               Easily integrate our payment gateway into your website or app with our simple plugins or APIs.
+               Our documentation will guide you through every step, so you can start accepting payments right away.
+          </h4>
+
+          <h4>
+            <h3>
+            7. Start Accepting Payments
+          </h3>
+
+            Once set up, you’re ready to begin receiving payments! You can manage transactions from your dashboard, track progress, and get detailed reports.
+
+          </h4>
+
+          <h4>
+
+            <h3>
+            8. Get Support When You Need It
+          </h3>
+
+            If you need help at any point, our customer support team is just a click away. We offer live chat, email, and phone support to assist you in setting up or resolving any issues.
+
+
+          </h4>
+
+          <footer class="footer">
+            <div class="footer-content">
+              <div class="social-links">
+                <a href="https://www.facebook.com" target="_blank" class="social-link">
+                  <img src="fb.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://www.twitter.com" target="_blank" class="social-link">
+                  <img src="xx.png" alt="Twitter" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com" target="_blank" class="social-link">
+                  <img src="ig.png" alt="Instagram" class="social-icon">
+                </a>
+
+              </div>
+              <p class="footer-text">© 2024 United Pay. All Rights Reserved.</p>
+            </div>
+          </footer>
+          
+             
